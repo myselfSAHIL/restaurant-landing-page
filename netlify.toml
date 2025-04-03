@@ -3,8 +3,7 @@
   publish = "build"
 
 [build.environment]
-  NODE_VERSION = "16.20.0"
-  NODE_OPTIONS = "--openssl-legacy-provider"
+  NODE_VERSION = "18.17.0"
   CI = "false"
 
 [[redirects]]
