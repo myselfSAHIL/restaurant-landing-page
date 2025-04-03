@@ -11,27 +11,30 @@ import SignIn from "./Components/SignIn";
 import Menu from "./Components/Menu";
 import Cart from "./Components/Cart";
 import SpecialOffers from "./Components/SpecialOffers";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/signin" component={SignIn} />
-          <Route path="/menu" component={Menu} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/">
-            <Home />
-            <SpecialOffers />
-            <About />
-            <Work />
-            <Testimonial />
-            <Contact />
-            <Footer />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/signin" component={SignIn} />
+            <Route path="/menu" component={Menu} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/">
+              <Home />
+              <SpecialOffers />
+              <About />
+              <Work />
+              <Testimonial />
+              <Contact />
+              <Footer />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

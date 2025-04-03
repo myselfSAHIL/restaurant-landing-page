@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../App.css";
+import { useCart } from "../context/CartContext";
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const { addToCart } = useCart();
 
   const categories = [
     { id: "all", name: "All" },
@@ -52,7 +54,7 @@ const Menu = () => {
       description: "Toasted bread with fresh tomatoes, garlic, and basil",
       price: 6.99,
       category: "starters",
-      image: "https://images.unsplash.com/photo-1526392060635-9d61d7f1f0d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
       id: 6,
@@ -86,6 +88,12 @@ const Menu = () => {
                          item.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    // You could add a toast notification here to show the item was added
+    alert(`${item.name} added to cart!`);
+  };
 
   return (
     <div className="menu-container">
@@ -123,7 +131,12 @@ const Menu = () => {
               <p>{item.description}</p>
               <div className="menu-item-footer">
                 <span className="price">${item.price.toFixed(2)}</span>
-                <button className="add-to-cart-button">Add to Cart</button>
+                <button 
+                  className="add-to-cart-button"
+                  onClick={() => handleAddToCart(item)}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>

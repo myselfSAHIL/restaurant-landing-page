@@ -13,8 +13,8 @@ const Testimonial = () => {
       </div>
       <div className="testimonial-section-bottom">
         <img 
-          src="/testimonial-profile.jpg"
-          alt="Amirul Islam" 
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+          alt="Michael Chen" 
         />
         <p>
           "The food here is absolutely amazing! Every dish is prepared with such care and attention to detail. The flavors are incredible, and the service is top-notch. I can't wait to come back!"
@@ -26,7 +26,7 @@ const Testimonial = () => {
           <FaStar />
           <FaStar />
         </div>
-        <h2>Amirul Islam</h2>
+        <h2>Michael Chen</h2>
       </div>
     </div>
   );
