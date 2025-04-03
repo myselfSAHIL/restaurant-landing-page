@@ -2,6 +2,10 @@
   "name": "landing-page-tutorial",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -19,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
